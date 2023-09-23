@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  body{
+    background-color: rgb(74, 72, 72);
+  }
+  p{
+    /* text-align: center; */
+    
+    margin: 5px 0 0 30px;
+    outline: none;
+    padding: .8em 0;
+    /* text-shadow: 0 1px #68B25B; */
+  }
+
+  div{
+    position: absolute;
+    left: 500px;
+    top: 30px;
+    
+   
+    height: 500px;
+    width: 400px;
+    background-color: white;
+  }
+  label{
+    font-size: 1.1rem;
+  }
+  input{
+    font-size: 1.1rem;
+  }
+  #submit{
+    width: 90%;
+    height: 40px;
+    background-color: rgb(6, 6, 138);
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+  <div>
+
+<form action="#" method="post" onsubmit="return validate()">
+  <p>
+    <h1 style="font-size: 30px; text-align: center;">Wscube Tech <br> Registration Form</h1>
+  </p>
+  <p>
+    <label for="Username">Username <br> </label>
+    <input type="text" placeholder="Username" name="Username" id="Username" onkeyup="white(this.value)">
+  </p>
+  <p>
+    <label for="password">password <br></label>
+    <input type="password" id="password" name="password" onkeyup="white(this.value)">
+  </p>
+  <p>
+    <label for="confirm_password">confirm password <br></label>
+    <input type="password" id="confirm_password" name="confirm_password" onkeyup="check(this)">
+    <!-- <error id="alert"></error> -->
+  </p>
+  <p>
+    <error id="alert-caps"></error>
+    <input id="submit" type="submit" value="SUBMIT">
+   
+ </p>
+</form>
+</div>
+
+</body>
+<script>
+var patten = /\s/g;
+var alert = document.getElementById('alert-caps')
+function white(data){
+  var isSpace = patten.test(data);
+  if (isSpace){
+    alert.innerText = "space is not allow";
+  }else{
+    alert.innerText = "";
+  }
+}
+</script>
+</html>
